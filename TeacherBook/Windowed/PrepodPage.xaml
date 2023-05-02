@@ -1,0 +1,26 @@
+﻿<Page x:Class="TeacherBook.Windowed.PrepodPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TeacherBook.Windowed"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Окно преподавателя">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BorderBrush" Value="Gray"></Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+            <Setter Property="Margin" Value="2"></Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="200">
+            <Button x:Name="AddStudentButton" Click="AddStudentButton_Click">Добавить студента</Button>
+            <Button x:Name="AddEvalutionButton" Click="AddEvalutionButton_Click">Добавить оценку</Button>
+            <Button x:Name="StudentListButton" Click="StudentListButton_Click">Список студентов</Button>
+            <Button x:Name="RegEvalutinButton" Click="RegEvalutinButton_Click">Редактировать оценку</Button>
+            <Button x:Name="DeleteStudentButton" Click="DeleteStudentButton_Click">Удалить студента</Button>
+        </StackPanel>
+    </Grid>
+</Page>
