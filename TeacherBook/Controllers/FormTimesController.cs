@@ -16,7 +16,7 @@ namespace TeacherBook.Controllers
         /// GET
         /// </summary>
         /// <returns></returns>
-        public List<FormTime> GetFormTime()
+        public static List<FormTime> GetFormTime()
         {
             using (HttpClient client = new HttpClient())
             {
@@ -34,7 +34,7 @@ namespace TeacherBook.Controllers
         /// </summary>
         /// <param name="record"></param>
         /// <returns></returns>
-        public bool POSTFormTime(FormTime record)
+        public static bool POSTFormTime(FormTime record)
         {
             string jsonStr = JsonConvert.SerializeObject(record);
             var buffer = System.Text.Encoding.UTF8.GetBytes(jsonStr);
@@ -48,7 +48,7 @@ namespace TeacherBook.Controllers
                 return response.IsSuccessStatusCode;
             }
         }
-        public bool DeleteFormTime(int id)
+        public static bool DeleteFormTime(int id)
         {
             using (HttpClient client = new HttpClient())
             {

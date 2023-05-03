@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeacherBook.Controllers;
+using TeacherBook.Models;
 
 namespace TeacherBook.Windowed
 {
@@ -23,6 +25,56 @@ namespace TeacherBook.Windowed
         public AddStudentPage()
         {
             InitializeComponent();
+            List<Profession> arrProfession = ProfessionController.GetProfession();
+            List<FormTime> arrFormTime = FormTimesController.GetFormTime();
+            List<Group> arrGroup = GroupController.GetGroup();
+            List<YearAdd> arrYearAdd = YearAddController.GetYearAdd();
+            GroupComboBox.ItemsSource = arrGroup.ToList();
+            ProfessionComboBox.ItemsSource = arrProfession.ToList();
+            YearComboBox.ItemsSource = arrYearAdd.ToList();
+            FormTimeComboBox.ItemsSource = arrFormTime.ToList();
+        }
+
+        private void LastNameTextBox_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ProfessionComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            int group = Convert.ToInt32(GroupComboBox.SelectedValue);
+            int profession = Convert.ToInt32(ProfessionComboBox.SelectedValue);
+            int yearadd = Convert.ToInt32(YearComboBox.SelectedValue);
+            int formtime = Convert.ToInt32(FormTimeComboBox.SelectedValue);
+            string firstname = (FirstNameTextBox.Text);
+            string lastname = (LastNameTextBox.Text);
+            string patronymicname = (PatronymicNameTextBox.Text);
+
+            Student newStudent = new Student
+            {
+                IdGroup = group,
+                IdProfession = profession,
+                IdYearAdd = yearadd,
+                FiestName = firstname,
+                LastName = lastname,
+                PatronomicName = patronymicname,
+                IdFormTime = formtime
+            };
+            if (StudentController.POSTStudent(newStudent))
+            {
+                this.NavigationService.Navigate(new PrepodPage());
+                MessageBox.Show("нифига добавилось!!!!!!!!!");
+            }
+            else
+            {
+                MessageBox.Show("нифига не добавилось");
+            }
         }
     }
 }

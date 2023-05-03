@@ -9,39 +9,25 @@
       Title="Добавить студента">
 
     <Grid>
-        <StackPanel>
-            <UniformGrid>
-                <Image></Image>
-                <Button Width="100" Height="60" HorizontalAlignment="Right">Назад</Button>
-            </UniformGrid>
-        </StackPanel>
+        
         <StackPanel VerticalAlignment="Center">
             <UniformGrid Columns="2">
-                <Label>Введиие ФИО
-                </Label>
-                <TextBox></TextBox>
-                <Label>Специальность
-                </Label>
-                <ComboBox>
-
-                </ComboBox>
-                <Label>Год поступления
-                </Label>
-                <ComboBox>
-
-                </ComboBox>
-                <Label>Форма обучения
-                </Label>
-                <ComboBox>
-
-                </ComboBox>
-                <Label>Название группы
-                </Label>
-                <ComboBox>
-
-                </ComboBox>
+                <Label>Введиие Фamilia </Label>
+                <TextBox x:Name="LastNameTextBox"></TextBox>
+                <Label>Введиие Иmeow</Label>
+                <TextBox x:Name="FirstNameTextBox"></TextBox>
+                <Label>Введиие Оtchizna</Label>
+                <TextBox x:Name="PatronymicNameTextBox"></TextBox>
+                <Label>Специальность</Label>
+                <ComboBox x:Name="ProfessionComboBox" DisplayMemberPath="NameProfession" SelectedValuePath="IdProfession" SelectionChanged="ProfessionComboBox_SelectionChanged"></ComboBox>
+                <Label>Год поступления</Label>
+                <ComboBox x:Name="YearComboBox" SelectedValuePath="IdYear" DisplayMemberPath="Year"></ComboBox>
+                <Label>Форма обучения</Label>
+                <ComboBox x:Name="FormTimeComboBox" SelectedValuePath="Id" DisplayMemberPath="Name"></ComboBox>
+                <Label>Название группы</Label>
+                <ComboBox x:Name="GroupComboBox" SelectedValuePath="IdGroup" DisplayMemberPath="NameGroup"></ComboBox>
             </UniformGrid>
-            <Button Width="150" Height="25" Margin="10">Создать студента</Button>
+            <Button Width="150" Height="25" Margin="10" Click="Button_Click" >Создать студента</Button>
         </StackPanel>
     </Grid>
 </Page>

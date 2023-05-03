@@ -33,7 +33,7 @@ namespace TeacherBook.Controllers
         /// </summary>
         /// <param name="record"></param>
         /// <returns></returns>
-        public static bool POSTStudentt(Student record)
+        public static bool POSTStudent(Student record)
         {
             string jsonStr = JsonConvert.SerializeObject(record);
             var buffer = System.Text.Encoding.UTF8.GetBytes(jsonStr);

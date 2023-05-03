@@ -60,9 +60,6 @@ namespace TeacherBook.Windowed
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {  
-            try
-                 
-            {
                 int group = Convert.ToInt32(GroupComboBox.SelectedValue);
                 int student = Convert.ToInt32(StudentComboBox.SelectedValue);
                 int subject = Convert.ToInt32(SubjectComboBox.SelectedValue);
@@ -75,13 +72,14 @@ namespace TeacherBook.Windowed
                     IdSubject = subject,
                     Evaluation = evalution
                 };
-                JournalController.POSTJournal(newEvolution);
-                this.NavigationService.Navigate(new PrepodPage());
-            }
-            catch (Exception)
+            if (JournalController.POSTJournal(newEvolution))
             {
-               
-                throw;
+                this.NavigationService.Navigate(new PrepodPage());
+                MessageBox.Show("нифига добавилось!!!!!!!!!");
+            }
+            else
+            {
+                MessageBox.Show("нифига не добавилось");
             }
         }
 
