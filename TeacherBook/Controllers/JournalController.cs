@@ -48,6 +48,30 @@ namespace TeacherBook.Controllers
                 return response.IsSuccessStatusCode;
             }
         }
+        /// <summary>
+        /// PUT
+        /// </summary>
+        /// <param name="record"></param>
+        /// <returns></returns>
+        public static bool PUTJournal(int idJournal,Journal record)
+        {
+            string jsonStr = JsonConvert.SerializeObject(record);
+            var buffer = System.Text.Encoding.UTF8.GetBytes(jsonStr);
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            using (HttpClient client = new HttpClient())
+            {
+                string url = $"{Manager.RootUrl}Journals/{idJournal}";
+                Console.WriteLine(url);
+                HttpResponseMessage response = client.PostAsync(url, byteContent).Result;
+                return response.IsSuccessStatusCode;
+            }
+        }
+        /// <summary>
+        /// DELETE
+        /// </summary>
+        /// <param name="id">Идентификатор</param>
+        /// <returns></returns>
         public static bool DeleteJournal(int id)
         {
             using (HttpClient client = new HttpClient())

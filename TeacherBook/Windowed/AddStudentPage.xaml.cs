@@ -45,9 +45,10 @@ namespace TeacherBook.Windowed
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+     
 
+        private void StudentAddButton_Click(object sender, RoutedEventArgs e)
+        {
             int group = Convert.ToInt32(GroupComboBox.SelectedValue);
             int profession = Convert.ToInt32(ProfessionComboBox.SelectedValue);
             int yearadd = Convert.ToInt32(YearComboBox.SelectedValue);

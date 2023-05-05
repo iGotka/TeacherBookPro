@@ -100,6 +100,9 @@
     <Compile Include="Windowed\PrepodPage.xaml.cs">
       <DependentUpon>PrepodPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windowed\RegEvolutionPage.xaml.cs">
+      <DependentUpon>RegEvolutionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windowed\RegPage.xaml.cs">
       <DependentUpon>RegPage.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windowed\PrepodPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windowed\RegEvolutionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

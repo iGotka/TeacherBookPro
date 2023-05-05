@@ -20,7 +20,10 @@
                 <DataGridTemplateColumn Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button>Профиль</Button>
+                            <StackPanel Orientation="Horizontal">
+                            <Button  Click="ProfileButton_Click">Профиль</Button>
+                                <Button  Click="RedButton_Click">Редактировать студента</Button>
+                            </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeacherBook.Models;
 
 namespace TeacherBook.Windowed
 {
@@ -43,10 +44,7 @@ namespace TeacherBook.Windowed
 
         private void RegEvalutinButton_Click(object sender, RoutedEventArgs e)
         {
-            //Button btnEdit = sender as Button;
-            //AddEvolutionPage activeElement = btnEdit.DataContext as AddEvolutionPage;
-            //var win = new AddEvolutionPage(activeElement);
-            //win.ShowDialog();
+           
         }
 
         private void DeleteStudentButton_Click(object sender, RoutedEventArgs e)

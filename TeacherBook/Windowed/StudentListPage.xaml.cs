@@ -25,7 +25,7 @@ namespace TeacherBook.Windowed
         public StudentListPage()
         {
             InitializeComponent();
-            List <Student> arrStudent = StudentController.GetStudent();
+            List<Student> arrStudent = StudentController.GetStudent();
             List<Group> arrGroup = GroupController.GetGroup();
             DataGridRegestration.ItemsSource = arrStudent;
 
@@ -34,6 +34,21 @@ namespace TeacherBook.Windowed
         private void DataGridRegestration_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void RedButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button activeButton = sender as Button;
+            Student activeStudent = activeButton.DataContext as Student;
+            Journal activeJournal = activeButton.DataContext as Journal;
+            var page = new RegEvolutionPage(activeJournal);
+            this.NavigationService.Navigate(page);
+            MessageBox.Show(activeStudent.IdStudent.ToString());
         }
     }
 }
